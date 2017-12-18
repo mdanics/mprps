@@ -59,7 +59,7 @@ class Rps extends Component {
         handleFocus = (event) => {
         event.target.select();
         }
-    
+
 
         render(){
 

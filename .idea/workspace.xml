@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c121b170-14e6-4f8a-8829-bdea7a0d78c3" name="Default" comment="" />
+    <list default="true" id="c121b170-14e6-4f8a-8829-bdea7a0d78c3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rps.js" afterPath="$PROJECT_DIR$/src/rps.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -50,8 +52,8 @@
       <file leaf-file-name="rps.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/rps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+            <state relative-caret-position="307">
+              <caret line="61" column="4" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -311,12 +313,12 @@
       <option name="presentableId" value="Default" />
       <updated>1513487116729</updated>
       <workItem from="1513487118512" duration="23630000" />
-      <workItem from="1513614097898" duration="4004000" />
+      <workItem from="1513614097898" duration="4787000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27634000" />
+    <option name="totallyTimeSpent" value="28417000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -463,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/rps.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="307">
+          <caret line="61" column="4" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

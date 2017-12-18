@@ -56,6 +56,11 @@ class Rps extends Component {
             })
         }
 
+        handleFocus = (event) => {
+        event.target.select();
+        }
+    
+
         render(){
 
         let otherPlayerConnected = false;
@@ -84,7 +89,7 @@ class Rps extends Component {
                 <h4> Send this URL to a friend, then wait for them to show up</h4>
                 <Row>
                     <Col xs={1} md={4}></Col>
-                    <Col xs={4} md={4}><FormControl type="text" value={window.location.origin + "/&" + this.state.instanceId} className="url"/></Col>
+                    <Col xs={4} md={4}><FormControl type="text" value={window.location.origin + "/&" + this.state.instanceId} className="url" onFocus={this.handleFocus}/></Col>
                     <Col xs={1} md={4}></Col>
                 </Row>
             </Grid>

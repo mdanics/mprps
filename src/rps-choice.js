@@ -25,17 +25,12 @@ class RpsChoice extends Component {
 
     choose = (choice) => {
         this.setState({choice: choice});
-        if (this.props.player === "creator"){
-            firebase.database().ref('games/' + this.props.instanceId).update({
-                creatorChoice: choice,
-            });
-        }
 
-        if (this.props.player === "opponent"){
-            firebase.database().ref('games/' + this.props.instanceId).update({
-                opponentChoice: choice,
-            });
-        }
+        const key = this.props.player + "Choice";
+        firebase.database().ref('games/' + this.props.instanceId).update({
+            [key]: choice,
+        });
+
 };
 
     isWinner = () => {

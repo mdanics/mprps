@@ -75,7 +75,7 @@ class Rps extends Component {
         if (otherPlayerConnected){
             return (
                 <div>
-                    <h2> Rock Paper Scissorss. Room name {this.state.instanceId} </h2>
+                    <h2> Multiplayer Rock Paper Scissors</h2>
 
                     <RpsChoice instanceId={this.state.instanceId} player={this.state.player}/>
                 </div>

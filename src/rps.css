@@ -6,4 +6,5 @@
     border-radius: 4px;
     width: 400px;
     text-align: center;
+    box-sizing: content-box;
 }

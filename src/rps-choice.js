@@ -95,7 +95,9 @@ class RpsChoice extends Component {
             <div>
                 <h1> You lost! :( </h1>
                 <h3> You threw {this.state.choice} and your opponent threw {this.state.opponentChoice}</h3>
+                <Button bsStyle="success" href="/"> New Game </Button>
             </div>
+
         );
 
 

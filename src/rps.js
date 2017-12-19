@@ -11,11 +11,14 @@ class Rps extends Component {
     constructor(props) {
         super(props);
         const { match: { params } } = this.props;
-        this.state = {instanceId: params.instanceId, player: "none", opponentConnected: false};
+        this.state = {instanceId: params.instanceId, player: "none", opponentConnected: false, creatorChoice: "none",
+        opponentChoice: "none"
+        };
     }
 
         componentDidMount() {
             firebase.database().ref('games/' + this.state.instanceId).on('value', (snapshot) =>{
+
                 if (snapshot.val().creatorGUID === userGuid()) {
                     this.setState({player: "creator"});
                     firebase.database().ref('games/' + this.state.instanceId + "/creatorConnected").onDisconnect().set(false);

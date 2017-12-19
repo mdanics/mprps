@@ -5,27 +5,27 @@ import React, { Component } from 'react';
 import EndGameOptions from './endGameOptions'
 
 
-const win = (choice, opponentChoice) => (
+const win = (instanceId, player, choice, opponentChoice) => (
     <div>
         <h1> You Won! :) </h1>
         <h3> You threw {choice} and your opponent threw {opponentChoice}</h3>
-        <EndGameOptions/>
+        <EndGameOptions instanceId={instanceId} player={player}/>
     </div>
 );
 
-const lose = (choice, opponentChoice) => (
+const lose = (instanceId, player, choice, opponentChoice) => (
     <div>
         <h1> You lost! :( </h1>
         <h3> You threw {choice} and your opponent threw {opponentChoice}</h3>
-        <EndGameOptions/>
+        <EndGameOptions instanceId={instanceId} player={player}/>
     </div>
 );
 
-const tie = (choice) => (
+const tie = (instanceId, player, choice) => (
     <div>
         <h1> It's a tie </h1>
         <h3> You both threw {choice}</h3>
-        <EndGameOptions/>
+        <EndGameOptions instanceId={instanceId} player={player}/>
     </div>
 );
 

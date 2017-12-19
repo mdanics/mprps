@@ -17,10 +17,10 @@ class RpsChoice extends Component {
     componentDidMount() {
         firebase.database().ref('games/' + this.props.instanceId).on('value', (snapshot) =>{
              if(this.props.player === "creator")
-                 this.setState({opponentChoice: snapshot.val().opponentChoice});
+                 this.setState({choice: snapshot.val().creatorChoice, opponentChoice: snapshot.val().opponentChoice});
 
             else if(this.props.player === "opponent")
-                 this.setState({opponentChoice: snapshot.val().creatorChoice});
+                 this.setState({choice: snapshot.val().opponentChoice, opponentChoice: snapshot.val().creatorChoice});
         })
     }
 
@@ -74,15 +74,15 @@ class RpsChoice extends Component {
         );
 
         else if (this.isWinner() === "tie") return(
-            tie(this.state.choice)
+            tie(this.props.instanceId, this.props.player, this.state.choice)
         );
 
         else if (this.isWinner()) return(
-            win(this.state.choice, this.state.opponentChoice)
+            win(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice)
         );
 
         else return(
-            lose(this.state.choice, this.state.opponentChoice)
+            lose(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice)
 
         );
 

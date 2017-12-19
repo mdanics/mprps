@@ -37,10 +37,12 @@ class App extends Component {
                 creatorGUID: userGuid(),
                 creatorConnected: true,
                 creatorWins: 0,
+                creatorRemach: false,
                 opponentChoice: "none",
                 opponentConnected: false,
                 opponentGUID: "",
                 opponentWins: 0,
+                opponentRemach: false,
             });
         }
         else if (location.includes("&")) {

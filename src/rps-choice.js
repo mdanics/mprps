@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import './rps-choice.css';
+import { win, lose, tie } from './endGameScreens'
 
 
 class RpsChoice extends Component {
@@ -73,25 +74,15 @@ class RpsChoice extends Component {
         );
 
         else if (this.isWinner() === "tie") return(
-            <div>
-                <h1> It's a tie </h1>
-                <h3> You both threw {this.state.choice}</h3>
-            </div>
+            tie(this.state.choice)
         );
 
         else if (this.isWinner()) return(
-            <div>
-                <h1> You Won! :) </h1>
-                <h3> You threw {this.state.choice} and your opponent threw {this.state.opponentChoice}</h3>
-            </div>
+            win(this.state.choice, this.state.opponentChoice)
         );
 
         else return(
-            <div>
-                <h1> You lost! :( </h1>
-                <h3> You threw {this.state.choice} and your opponent threw {this.state.opponentChoice}</h3>
-                <Button bsStyle="success" href="/"> New Game </Button>
-            </div>
+            lose(this.state.choice, this.state.opponentChoice)
 
         );
 

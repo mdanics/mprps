@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c121b170-14e6-4f8a-8829-bdea7a0d78c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.css" afterPath="$PROJECT_DIR$/src/App.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rps.css" afterPath="$PROJECT_DIR$/src/rps.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rps.js" afterPath="$PROJECT_DIR$/src/rps.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/endGameOptions.js" afterPath="$PROJECT_DIR$/src/endGameOptions.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="App.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-57">
@@ -105,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="endGameOptions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="endGameOptions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/endGameOptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="489">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
                 <element signature="e#47#88#0" expanded="true" />
               </folding>
@@ -166,10 +164,10 @@
         <option value="$PROJECT_DIR$/src/endGameScreen.js" />
         <option value="$PROJECT_DIR$/src/rps-choice.js" />
         <option value="$PROJECT_DIR$/src/endGameScreens.js" />
-        <option value="$PROJECT_DIR$/src/endGameOptions.js" />
         <option value="$PROJECT_DIR$/src/rps.css" />
         <option value="$PROJECT_DIR$/src/rps.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/endGameOptions.js" />
       </list>
     </option>
   </component>
@@ -362,12 +360,12 @@
       <workItem from="1513487118512" duration="23630000" />
       <workItem from="1513614097898" duration="5544000" />
       <workItem from="1513635381078" duration="420000" />
-      <workItem from="1513635908451" duration="13271000" />
+      <workItem from="1513635908451" duration="13319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42865000" />
+    <option name="totallyTimeSpent" value="42913000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-36" y="85" width="1440" height="748" extended-state="0" />
@@ -619,16 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/endGameOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#47#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/rps-choice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
@@ -643,14 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/rps.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -670,6 +650,24 @@
         <state relative-caret-position="-57">
           <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/rps.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="1" lean-forward="false" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/endGameOptions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <element signature="e#47#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

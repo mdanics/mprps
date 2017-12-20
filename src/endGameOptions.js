@@ -77,7 +77,6 @@ class EndGameOptions extends Component {
         return(
         <ButtonToolbar>
             <Button bsStyle="success" onClick={this.remach}> {this.state.remachText}</Button>
-            <Button bsStyle="warning" href="/"> New Game with New Opponent</Button>
         </ButtonToolbar>
         )
     }

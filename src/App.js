@@ -23,14 +23,16 @@ export const auth = firebase.auth();
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {instanceId: window.location.pathname, player: ""};
+        const urlSeperator = '';
+        const slashUrlSeperator = '/' + urlSeperator;
+        this.state = {instanceId: window.location.pathname, player: "", urlSeperator: urlSeperator, slashUrlSeperator: slashUrlSeperator };
     }
 
     componentDidMount() {
         let location = window.location.pathname;
-        if (location === "/" || location === "/&")  {
+        if (location === "/" || location === this.state.slashUrlSeperator)  {
             let instanceId = shortid.generate();
-            this.setState({instanceId: "/&" + instanceId, player: "creator"});
+            this.setState({instanceId: this.state.slashUrlSeperator + instanceId, player: "creator"});
             firebase.database().ref('games/' + instanceId).set({
                 instanceId: instanceId,
                 creatorChoice: "none",
@@ -45,8 +47,8 @@ class App extends Component {
                 opponentRemach: false,
             });
         }
-        else if (location.includes("&")) {
-            let instanceId = window.location.pathname.substring(2);
+        else if (location.includes(this.state.urlSeperator)) {
+            let instanceId = window.location.pathname.substring(this.state.slashUrlSeperator.length);
             firebase.database().ref('/games/' + instanceId).once('value').then((snapshot) =>{
                 let creatorGUID = snapshot.val().creatorGUID;
                 if (creatorGUID === userGuid()){
@@ -75,7 +77,7 @@ class App extends Component {
 
           <Redirect to={this.state.instanceId} push={true} />
         <div>
-          <Route path="/&:instanceId" component={ Rps }/>
+          <Route path={this.state.slashUrlSeperator + ":instanceId"} component={ Rps }/>
         </div>
       </div>
         </BrowserRouter>

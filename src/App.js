@@ -23,16 +23,16 @@ export const auth = firebase.auth();
 class App extends Component {
     constructor(props) {
         super(props);
-        const urlSeperator = '';
-        const slashUrlSeperator = '/' + urlSeperator;
-        this.state = {instanceId: window.location.pathname, player: "", urlSeperator: urlSeperator, slashUrlSeperator: slashUrlSeperator };
+        const urlSeparator = '';
+        const slashUrlSeparator = '/' + urlSeparator;
+        this.state = {instanceId: window.location.pathname, player: "", urlSeparator: urlSeparator, slashUrlSeparator: slashUrlSeparator };
     }
 
     componentDidMount() {
         let location = window.location.pathname;
-        if (location === "/" || location === this.state.slashUrlSeperator)  {
+        if (location === "/" || location === this.state.slashUrlSeparator)  {
             let instanceId = shortid.generate();
-            this.setState({instanceId: this.state.slashUrlSeperator + instanceId, player: "creator"});
+            this.setState({instanceId: this.state.slashUrlSeparator + instanceId, player: "creator"});
             firebase.database().ref('games/' + instanceId).set({
                 instanceId: instanceId,
                 creatorChoice: "none",
@@ -47,8 +47,8 @@ class App extends Component {
                 opponentRemach: false,
             });
         }
-        else if (location.includes(this.state.urlSeperator)) {
-            let instanceId = window.location.pathname.substring(this.state.slashUrlSeperator.length);
+        else if (location.includes(this.state.urlSeparator)) {
+            let instanceId = window.location.pathname.substring(this.state.slashUrlSeparator.length);
             firebase.database().ref('/games/' + instanceId).once('value').then((snapshot) =>{
                 let creatorGUID = snapshot.val().creatorGUID;
                 if (creatorGUID === userGuid()){
@@ -77,7 +77,8 @@ class App extends Component {
 
           <Redirect to={this.state.instanceId} push={true} />
         <div>
-          <Route path={this.state.slashUrlSeperator + ":instanceId"} component={ Rps }/>
+            <Route exact path={this.state.slashUrlSeparator + ":instanceId"} render={props => <Rps slashUrlSeparator={this.state.slashUrlSeparator} {...props} />} />
+            {/*<Route path={this.state.slashUrlSeparator + ":instanceId"} component={ Rps } slashUrlSeparator="lego"/>*/}
         </div>
       </div>
         </BrowserRouter>

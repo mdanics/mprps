@@ -1,6 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+* {
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+html, body {
+  margin: 0;
+  height:100%;
+  background-color: #00afc4;
+  color: white;
+}
+
+h1{
+  font-weight: 900;
+}
+
+h4 {
+  color: black;
+  font-weight: 700;
+}
+
 .App {
   text-align: center;
 }
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -26,3 +51,9 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+

@@ -12,7 +12,7 @@ class Rps extends Component {
         super(props);
         const { match: { params } } = this.props;
         this.state = {instanceId: params.instanceId, player: "none", opponentConnected: false, creatorChoice: "none",
-        opponentChoice: "none"
+        opponentChoice: "none", otherPlayerWins: 0, yourWins: 0,
         };
     }
 
@@ -38,6 +38,8 @@ class Rps extends Component {
 
                 console.log('somethign changed');
                 if (this.state.player === "creator") {
+                    this.setState({yourWins: snapshot.val().creatorWins, otherPlayerWins: snapshot.val().opponentWins});
+
                     if (snapshot.val().opponentConnected){
                         this.setState({opponentConnected: true})
                     }
@@ -46,7 +48,8 @@ class Rps extends Component {
                     }
                 }
                 if (this.state.player === "opponent") {
-                    console.log('u r opp');
+                    this.setState({yourWins: snapshot.val().opponentWins, otherPlayerWins: snapshot.val().creatorWins});
+
                     if (snapshot.val().creatorConnected){
                         this.setState({opponentConnected: true});
                         console.log('other is there');
@@ -77,16 +80,29 @@ class Rps extends Component {
         console.log("player", this.state.player, "opp conn", this.state.opponentConnected);
         if (otherPlayerConnected){
             return (
-                <div>
-                    <h2> Multiplayer Rock Paper Scissors</h2>
+                <Grid>
+                    <Row>
+                        <Col md = {2}>
+                            <h3>You</h3>
+                            <h1 style={{fontWeight: "bold"}}> {this.state.yourWins}</h1>
 
+                        </Col>
+                        <Col md = {8}>
+                            <h1> Multiplayer Rock Paper Scissors </h1>
+                        </Col>
+                        <Col md = {2}>
+                            <h3>Them</h3>
+                            <h1 style={{fontWeight: "bold"}}> {this.state.otherPlayerWins}</h1>
+                        </Col>
+                   </Row>
                     <RpsChoice instanceId={this.state.instanceId} player={this.state.player}/>
-                </div>
+                </Grid>
             )
         }
 
         return(
             <Grid>
+
                 <h1> Multiplayer Rock Paper Scissors </h1>
                 <h2> Invite a friend to play with them </h2>
                 <h4> Send this URL to a friend, then wait for them to show up</h4>

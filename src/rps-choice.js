@@ -74,15 +74,15 @@ class RpsChoice extends Component {
         );
 
         else if (this.isWinner() === "tie") return(
-            tie(this.props.instanceId, this.props.player, this.state.choice)
+            tie(this.props.instanceId, this.props.player, this.state.choice, isWinner)
         );
 
         else if (this.isWinner()) return(
-            win(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice)
+            win(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice, isWinner)
         );
 
         else return(
-            lose(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice)
+            lose(this.props.instanceId, this.props.player, this.state.choice, this.state.opponentChoice, isWinner)
 
         );
 

@@ -9,7 +9,7 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 class EndGameOptions extends Component {
     constructor(props){
         super(props);
-        this.state = {remach: false, opponentRemach: false, remachText: "Remach?"}
+        this.state = {remach: false, opponentRemach: false, remachText: "Remach?", totalWins: 0}
     }
 
     componentDidMount(){
@@ -20,10 +20,43 @@ class EndGameOptions extends Component {
 
             else if(this.props.player === "opponent")
                 this.setState({opponentRemach: snapshot.val().creatorRemach});
-        })
+
+        });
+
+        firebase.database().ref('games/' + this.props.instanceId).once('value', (snapshot) =>{
+            if(this.props.player === "creator")
+                this.setState({totalWins: snapshot.val().creatorWins});
+
+            else if(this.props.player === "opponent")
+                this.setState({totalWins: snapshot.val().opponentWins});
+
+        }).then(() =>{
+            if (this.props.isWinner === true){
+                let newTotalWins = this.state.totalWins + 1;
+                this.setState({totalWins: newTotalWins});
+
+                if (this.props.player === "creator"){
+                    firebase.database().ref('games/' + this.props.instanceId).update({
+                        creatorWins: newTotalWins
+                    });
+                }
+                else if (this.props.player === "opponent"){
+                    firebase.database().ref('games/' + this.props.instanceId).update({
+                        opponentWins: newTotalWins
+                    });
+                }
+            }
+            }
+        );
+
     }
 
     remach = () => {
+        const winsKey = this.props.player + "Wins";
+        const remachKey = this.props.player + "Remach";
+
+
+
         if (this.state.opponentRemach){
             firebase.database().ref('games/' + this.props.instanceId).update({
                 creatorChoice: "none",
@@ -34,9 +67,8 @@ class EndGameOptions extends Component {
         }
         else {
             this.setState({remach: true, remachText: "Waiting for opponent..."});
-            const key = this.props.player + "Remach";
             firebase.database().ref('games/' + this.props.instanceId).update({
-                [key]: true,
+                [remachKey]: true,
             });
         }
     };
@@ -44,7 +76,7 @@ class EndGameOptions extends Component {
     render(){
         return(
         <ButtonToolbar>
-            <Button bsStyle="success" onClick={this.remach}> {this.state.remachText} </Button>
+            <Button bsStyle="success" onClick={this.remach}> {this.state.remachText}</Button>
             <Button bsStyle="warning" href="/"> New Game with New Opponent</Button>
         </ButtonToolbar>
         )

@@ -3,6 +3,7 @@ import RpsChoice from './rps-choice'
 import * as firebase from 'firebase';
 import { userGuid }from './guidGenerator'
 import { FormControl, Grid, Row, Col } from 'react-bootstrap'
+import OpponentConnected from './opponentConnected'
 import './rps.css'
 
 
@@ -96,6 +97,7 @@ class Rps extends Component {
                         </Col>
                    </Row>
                     <RpsChoice instanceId={this.state.instanceId} player={this.state.player}/>
+                    <OpponentConnected opponentConnected={this.state.opponentConnected}/>
                 </Grid>
             )
         }
@@ -111,6 +113,7 @@ class Rps extends Component {
                     <Col xs={4} md={4}><FormControl type="text" value={window.location.origin + "/&" + this.state.instanceId} className="url" onFocus={this.handleFocus}/></Col>
                     <Col xs={1} md={4}></Col>
                 </Row>
+                <OpponentConnected opponentConnected={this.state.opponentConnected}/>
             </Grid>
         )
 

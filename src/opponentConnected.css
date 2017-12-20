@@ -1,0 +1,25 @@
+.offline{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 200;
+    padding: 15px;
+    border-radius: 7px;
+    color: #fff;
+    opacity: .8;
+    text-align: center;
+    background-color: #ff411c;
+}
+
+.online{
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 200;
+    padding: 15px;
+    border-radius: 7px;
+    color: #fff;
+    opacity: .8;
+    text-align: center;
+    background-color: #1bdb2e;
+}

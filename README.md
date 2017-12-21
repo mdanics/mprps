@@ -1,5 +1,5 @@
 ## Realtime Multiplayer Rock Paper Scissors
-- Made as practice with React and Firebase
+- Made for practice with using React and Firebase
 
 ## Tech Used
 - HTML

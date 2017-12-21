@@ -2,8 +2,20 @@
 - Made as practice with React and Firebase
 
 ## Tech Used
-- React
+- HTML
+- CSS
+- ReactJS
 - Firebase
 
+## Built With
+- Webstorm
+- HyperJS
 
-Inspired by [rpsls](https://rpsls.net)
+## Deployed With 
+- [Netlify](https://www.netlify.com/)
+
+## Demo
+- [rps.danics.me](https://rps.danics.me)
+
+## Acknowledgements 
+- Inspired by [rpsls](https://rpsls.net)

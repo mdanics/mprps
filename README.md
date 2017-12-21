@@ -1,7 +1,7 @@
 ## Realtime Multiplayer Rock Paper Scissors
 - Made for practice with using React and Firebase
 
-## Tech Used
+## Technologies Used
 - HTML
 - CSS
 - ReactJS

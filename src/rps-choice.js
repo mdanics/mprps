@@ -15,7 +15,7 @@ class RpsChoice extends Component {
     }
 
     componentDidMount() {
-        firebase.database().ref('games/' + this.props.instanceId).on('value', (snapshot) =>{
+        firebase.database().ref('rps/games/' + this.props.instanceId).on('value', (snapshot) =>{
              if(this.props.player === "creator")
                  this.setState({choice: snapshot.val().creatorChoice, opponentChoice: snapshot.val().opponentChoice});
 
@@ -28,7 +28,7 @@ class RpsChoice extends Component {
         this.setState({choice: choice});
 
         const key = this.props.player + "Choice";
-        firebase.database().ref('games/' + this.props.instanceId).update({
+        firebase.database().ref('rps/games/' + this.props.instanceId).update({
             [key]: choice,
         });
 

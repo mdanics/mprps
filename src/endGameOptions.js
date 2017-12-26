@@ -14,7 +14,7 @@ class EndGameOptions extends Component {
 
     componentDidMount(){
 
-        firebase.database().ref('games/' + this.props.instanceId).on('value', (snapshot) =>{
+        firebase.database().ref('rps/games/' + this.props.instanceId).on('value', (snapshot) =>{
             if(this.props.player === "creator")
                 this.setState({opponentRemach: snapshot.val().opponentRemach});
 
@@ -23,7 +23,7 @@ class EndGameOptions extends Component {
 
         });
 
-        firebase.database().ref('games/' + this.props.instanceId).once('value', (snapshot) =>{
+        firebase.database().ref('rps/games/' + this.props.instanceId).once('value', (snapshot) =>{
             if(this.props.player === "creator")
                 this.setState({totalWins: snapshot.val().creatorWins});
 
@@ -36,12 +36,12 @@ class EndGameOptions extends Component {
                 this.setState({totalWins: newTotalWins});
 
                 if (this.props.player === "creator"){
-                    firebase.database().ref('games/' + this.props.instanceId).update({
+                    firebase.database().ref('rps/games/' + this.props.instanceId).update({
                         creatorWins: newTotalWins
                     });
                 }
                 else if (this.props.player === "opponent"){
-                    firebase.database().ref('games/' + this.props.instanceId).update({
+                    firebase.database().ref('rps/games/' + this.props.instanceId).update({
                         opponentWins: newTotalWins
                     });
                 }
@@ -58,7 +58,7 @@ class EndGameOptions extends Component {
 
 
         if (this.state.opponentRemach){
-            firebase.database().ref('games/' + this.props.instanceId).update({
+            firebase.database().ref('rps/games/' + this.props.instanceId).update({
                 creatorChoice: "none",
                 opponentChoice: "none",
                 opponentRemach: false,
@@ -67,7 +67,7 @@ class EndGameOptions extends Component {
         }
         else {
             this.setState({remach: true, remachText: "Waiting for opponent..."});
-            firebase.database().ref('games/' + this.props.instanceId).update({
+            firebase.database().ref('rps/games/' + this.props.instanceId).update({
                 [remachKey]: true,
             });
         }

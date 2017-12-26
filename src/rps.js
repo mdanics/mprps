@@ -18,18 +18,18 @@ class Rps extends Component {
     }
 
         componentDidMount() {
-            firebase.database().ref('games/' + this.state.instanceId).on('value', (snapshot) =>{
+            firebase.database().ref('rps/games/' + this.state.instanceId).on('value', (snapshot) =>{
 
                 if (snapshot.val().creatorGUID === userGuid()) {
                     this.setState({player: "creator"});
-                    firebase.database().ref('games/' + this.state.instanceId + "/creatorConnected").onDisconnect().set(false);
+                    firebase.database().ref('rps/games/' + this.state.instanceId + "/creatorConnected").onDisconnect().set(false);
                 }
                 // else if (snapshot.val().opponentGUID === ""){
                 //     alert("xxxx")
                 // }
                 else if (snapshot.val().opponentGUID === userGuid()) {
                     this.setState({player: "opponent"});
-                    firebase.database().ref('games/' + this.state.instanceId + "/opponentConnected").onDisconnect().set(false);
+                    firebase.database().ref('rps/games/' + this.state.instanceId + "/opponentConnected").onDisconnect().set(false);
                 }
                 else {
                     this.setState({player: "none"})

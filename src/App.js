@@ -20,6 +20,8 @@ firebase.initializeApp(config);
 
 export const auth = firebase.auth();
 
+let dbInstanceRef;
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -33,7 +35,7 @@ class App extends Component {
         if (location === "/" || location === this.state.slashUrlSeparator)  {
             let instanceId = shortid.generate();
             this.setState({instanceId: this.state.slashUrlSeparator + instanceId, player: "creator"});
-            firebase.database().ref('games/' + instanceId).set({
+            firebase.database().ref('rps/games/' + instanceId).set({
                 instanceId: instanceId,
                 creatorChoice: "none",
                 creatorGUID: userGuid(),
@@ -49,19 +51,19 @@ class App extends Component {
         }
         else if (location.includes(this.state.urlSeparator)) {
             let instanceId = window.location.pathname.substring(this.state.slashUrlSeparator.length);
-            firebase.database().ref('/games/' + instanceId).once('value').then((snapshot) =>{
+            firebase.database().ref('rps/games/' + instanceId).once('value').then((snapshot) =>{
                 let creatorGUID = snapshot.val().creatorGUID;
                 if (creatorGUID === userGuid()){
                     console.log("creator joined");
                     this.setState({player: "creator"});
-                    firebase.database().ref('/games/' + instanceId).update({
+                    firebase.database().ref('rps/games/' + instanceId).update({
                         creatorConnected: true
                     })
                 }
                 if (creatorGUID !== userGuid()){
                     console.log("opponent joined");
                     this.setState({player: "opponent"});
-                    firebase.database().ref('/games/' + instanceId).update({
+                    firebase.database().ref('rps/games/' + instanceId).update({
                         opponentGUID: userGuid(),
                         opponentConnected: true,
                     })

@@ -7,10 +7,6 @@
 - ReactJS
 - Firebase
 
-## Built With
-- Webstorm
-- HyperJS
-
 ## Deployed With 
 - [Netlify](https://www.netlify.com/)
 

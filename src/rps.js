@@ -108,6 +108,7 @@ class Rps extends Component {
                 <h1> Multiplayer Rock Paper Scissors </h1>
                 <h2> Invite a friend to play with them </h2>
                 <h4> Send this URL to a friend, then wait for them to show up</h4>
+                <h5> (If you want to play with your self, open a different browser and use the link)</h5>
                 <Row>
                     <Col xs={1} md={4}></Col>
                     <Col xs={4} md={4}><FormControl type="text" value={window.location.origin + this.props.slashUrlSeparator + this.state.instanceId} className="url" onFocus={this.handleFocus}/></Col>
